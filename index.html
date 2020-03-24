@@ -70,7 +70,7 @@ background-color:#00FFFF;
   <input type="text" placeholder="Enter username" id="username" name="username" required><br>
   <label for="pwd">Password: </label><br>
   <input type="password" placeholder="Enter password" id="pwd" name="pwd" required><br><br>
-  <label for="roles" required>Role: </label>
+  <label for="roles" >Role: </label>
   <select id="mySelect"  required>
   <option value="">None</option>
   <option value="admin" id="admin">Admin</option>
@@ -84,18 +84,18 @@ background-color:#00FFFF;
  
 
 
-<input type="submit" onclick="myFunction()" class='btn'></input>
+<input type="submit" onclick="myFunction();Validate();" class='btn'></input>
 
 <script>
 function myFunction()
 {
               var e = document.getElementById("mySelect");
 			  console.log(e);
-			  if(e.value=='admin')
+			  if(e.id=='admin')
 				{
 				location.href="admin.html";
 				}
-				else  if(e.value=='employee')
+				else  if(e.id=='employee')
 				{
 				location.href="admin.html";
 				}
@@ -103,7 +103,20 @@ function myFunction()
 				  location.htef="index.html";
 				  }
 				  
-}				  
+}		
+function Validate() {
+        var e = document.getElementById("mySelect");
+		var b = document.getElementById("username");
+		var p = document.getElementById("pwd");
+		
+        if (e.value == "" && b.value="" && p.value) {
+            //If the "Please Select" option is selected display error.
+            alert("Please select an option!");
+            return false;
+        }
+		
+        return true;
+    }		  
 </script>
   
 
