@@ -70,9 +70,9 @@ background-color:#00FFFF;
   <input type="text" placeholder="Enter username" id="username" name="username" required><br>
   <label for="pwd">Password: </label><br>
   <input type="password" placeholder="Enter password" id="pwd" name="pwd" required><br><br>
-  <label for="roles">Role: </label>
-  <select id="mySelect" >
-  <option value="None">select</option>
+  <label for="roles" required>Role: </label>
+  <select id="mySelect"  required>
+  <option value="">None</option>
   <option value="admin" id="admin">Admin</option>
   <option value="employee" id="employee">Employee</option>
   
@@ -84,7 +84,7 @@ background-color:#00FFFF;
  
 
 
-<button type="button" onclick="myFunction()" class='btn'>Login</button>
+<input type="submit" onclick="myFunction()" class='btn'></input>
 
 <script>
 function myFunction()
